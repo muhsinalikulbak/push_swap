@@ -19,7 +19,6 @@ a.out
 *.pch
 
 # Libraries
-*.lib
 *.a
 *.la
 *.lo
