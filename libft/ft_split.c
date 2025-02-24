@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	**free_all(char **result)
+char	**free_all(char **result)
 {
 	int	i;
 

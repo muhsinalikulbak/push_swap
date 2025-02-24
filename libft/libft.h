@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-
+char	**free_all(char **result);
 char	*ft_itoa(int n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);

@@ -8,7 +8,7 @@ RM = rm -f
 
 LIBFT_DIR = ./libft
 
-SRCS = push_swap.c
+SRCS = push_swap.c stack_utils.c push_swap_utils.c
 
 LIBFT_OBJS = ./libft/ft_atol.o ./libft/ft_bzero.o ./libft/ft_isalnum.o ./libft/ft_isalpha.o ./libft/ft_isascii.o ./libft/ft_isdigit.o\
 ./libft/ft_isprint.o ./libft/ft_memchr.o ./libft/ft_memcmp.o ./libft/ft_striteri.o\
@@ -28,6 +28,7 @@ ${NAME}: ${OBJ}
 		make -C ${LIBFT_DIR}
 		ar rcs ${NAME} ${OBJ} ${LIBFT_OBJS}
 		$(CC) $(NAME) -o push_swap
+		$(RM) $(OBJ)
 		
 clean:
 		make clean -C ${LIBFT_DIR}
