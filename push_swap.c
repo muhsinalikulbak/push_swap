@@ -15,7 +15,7 @@ static int digit_check(char *str)
 			plus_count++;
 		else if (str[i] == '-')
 			minus_count++;
-		else if (ft_isdigit(str[i]) == 1)
+		else if (!ft_isdigit(str[i]))
 			return (1);
 	}
 	if (plus_count == 0 && minus_count == 0)
@@ -45,7 +45,7 @@ void argv_check(Stack **stack, int argc, char **argv)
 		{
 			if (digit_check(str_num[j]) != 0)
 				error("Invalid Argument\n", stack, str_num);
-			num = atoi(str_num[j]);
+			num = ft_atol(str_num[j]);
 			if (num > INT_MAX || num < INT_MIN)
 				error("OverflowException\n", stack, str_num);
 			stack_push(stack, new_stack((int)(num)));
@@ -57,15 +57,17 @@ void argv_check(Stack **stack, int argc, char **argv)
 int main(int argc, char **argv)
 {
 	Stack *a;
-
+	Stack *temp;
 	if (argc < 2)
 		error("Invalid Argument Usage : ./push_swap num1 num2..\n", NULL, NULL);
 	a = NULL;
 
 	argv_check(&a, argc, argv);
+	temp = a;
 	while (a != NULL)
 	{
 		printf("%d\n", a->content);
 		a = a->next;
 	}
+	free_stack(temp);
 }
