@@ -46,7 +46,7 @@ void argv_check(Stack **stack, int argc, char **argv)
 			if (digit_check(str_num[j]) != 0)
 				error("Invalid Argument\n", stack, str_num);
 			num = ft_atol(str_num[j]);
-			if (num > INT_MAX || num < INT_MIN)
+			if (num > INT_MAX || num < INT_MIN || ft_strlen(str_num[j]) > 10)
 				error("OverflowException\n", stack, str_num);
 			stack_push(stack, new_stack((int)(num)));
 		}
