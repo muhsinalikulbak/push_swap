@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/25 18:43:27 by mkulbak           #+#    #+#             */
+/*   Updated: 2025/02/25 19:05:29 by mkulbak          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-Stack *get_last(Stack *stack)
+t_stack	*get_last(t_stack *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -9,19 +21,19 @@ Stack *get_last(Stack *stack)
 	return (stack);
 }
 
-Stack *new_stack(int num)
+t_stack	*new_stack(int num)
 {	
-	Stack *stack;
+	t_stack	*stack;
 
-	stack = malloc(sizeof(Stack));
+	stack = malloc(sizeof(t_stack));
 	stack->content = num;
 	stack->next = NULL;
 	return (stack);
 }
 
-void stack_push(Stack **head, Stack *stack)
+void	stack_push(t_stack **head, t_stack *stack)
 {
-	Stack	*last;
+	t_stack	*last;
 
 	last = get_last(*head);
 	if (last == NULL)
@@ -30,9 +42,9 @@ void stack_push(Stack **head, Stack *stack)
 		last->next = stack;
 }
 
-void free_stack(Stack *stack)
+void	free_stack(t_stack *stack)
 {
-	Stack	*temp;
+	t_stack	*temp;
 
 	if (stack)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkulbak <mkulbak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:21:41 by mkulbak           #+#    #+#             */
-/*   Updated: 2024/10/29 21:24:33 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/02/25 19:03:19 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
 char	**free_all(char **result);
 char	*ft_itoa(int n);
 int		ft_toupper(int c);
