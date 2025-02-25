@@ -40,14 +40,15 @@ void argv_check(Stack **stack, int argc, char **argv)
 		j = -1;
 		str_num = ft_split(argv[i], ' ');
 		if (str_num == NULL || str_num[0] == NULL)
-			error("Invalid Argument\n", stack, str_num);
+			error("Error\n", stack, str_num);
 		while (str_num[++j])
 		{
 			if (digit_check(str_num[j]) != 0)
-				error("Invalid Argument\n", stack, str_num);
+				error("Error\n", stack, str_num);
 			num = ft_atol(str_num[j]);
+			// Num'ı aldıktan sonra repeat fonksiyonuna gönder önce  ve aşağıdaki kısmı da ekle
 			if (num > INT_MAX || num < INT_MIN || ft_strlen(str_num[j]) > 10)
-				error("OverflowException\n", stack, str_num);
+				error("Error\n", stack, str_num);
 			stack_push(stack, new_stack((int)(num)));
 		}
 		free_all(str_num);
@@ -59,7 +60,7 @@ int main(int argc, char **argv)
 	Stack *a;
 	Stack *temp;
 	if (argc < 2)
-		error("Invalid Argument Usage : ./push_swap num1 num2..\n", NULL, NULL);
+		error("Error\n", NULL, NULL);
 	a = NULL;
 
 	argv_check(&a, argc, argv);
