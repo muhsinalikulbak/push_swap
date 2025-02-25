@@ -23,6 +23,15 @@ typedef struct s_list
 	int				content;
 	struct s_list	*next;
 }	t_stack;
+
+typedef	struct array_list
+{
+	int	*a;
+	int	*b;
+	int	a_length;
+	int	b_length;
+}	t_array;
+
 typedef struct s_lists
 {
 	t_stack	*a;

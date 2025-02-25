@@ -48,6 +48,8 @@ void	argv_check(t_stack **stack, int argc, char **argv)
 	int		i;
 	int		j;
 
+	if (argc < 2)
+		error("Error\n", NULL, NULL);
 	i = 0;
 	while (++i < argc)
 	{
@@ -73,8 +75,6 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*temp;
 
-	if (argc < 2)
-		error("Error\n", NULL, NULL);
 	a = NULL;
 	argv_check(&a, argc, argv);
 	temp = a;
