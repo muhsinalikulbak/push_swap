@@ -18,6 +18,6 @@ void	error(char *message, t_stack **stack, char **argv)
 		free_all(argv);
 	if (stack != NULL && *stack != NULL)
 		free_stack(*stack);
-	write(1, message, ft_strlen(message));
+	write(2, message, ft_strlen(message));
 	exit(EXIT_FAILURE);
 }

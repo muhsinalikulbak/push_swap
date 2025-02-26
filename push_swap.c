@@ -64,7 +64,7 @@ static void	argv_check(t_stack **stack, int argc, char **argv)
 	int		j;
 
 	if (argc < 2)
-		error("Error\n", NULL, NULL);
+		exit(EXIT_FAILURE);
 	i = 0;
 	while (++i < argc)
 	{
