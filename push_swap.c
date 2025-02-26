@@ -41,9 +41,24 @@ static int	digit_check(char *str)
 	return (1);
 }
 
-void	argv_check(t_stack **stack, int argc, char **argv)
+static void	repeating_num_check(t_stack **stack, long num, int num_len, char **str_nums)
 {
-	char	**str_num;
+	t_stack *temp;
+
+	if (num_len > 10 || num > INT_MAX || num < INT_MIN)
+		error("Error\n", stack, str_nums);
+	temp = *stack;
+	while (temp != NULL)
+	{
+		if (temp->content == (int)num)
+			error("Error\n", stack, str_nums);
+		temp = temp->next;
+	}
+}
+
+static void	argv_check(t_stack **stack, int argc, char **argv)
+{
+	char	**str_nums;
 	long	num;
 	int		i;
 	int		j;
@@ -54,19 +69,18 @@ void	argv_check(t_stack **stack, int argc, char **argv)
 	while (++i < argc)
 	{
 		j = -1;
-		str_num = ft_split(argv[i], ' ');
-		if (str_num == NULL || str_num[0] == NULL)
-			error("Error\n", stack, str_num);
-		while (str_num[++j])
+		str_nums = ft_split(argv[i], ' ');
+		if (str_nums == NULL || str_nums[0] == NULL)
+			error("Error\n", stack, str_nums);
+		while (str_nums[++j])
 		{
-			if (digit_check(str_num[j]) != 0)
-				error("Error\n", stack, str_num);
-			num = ft_atol(str_num[j]);
-			if (num > INT_MAX || num < INT_MIN || ft_strlen(str_num[j]) > 10)
-				error("Error\n", stack, str_num);
+			if (digit_check(str_nums[j]) != 0)
+				error("Error\n", stack, str_nums);
+			num = ft_atol(str_nums[j]);
+			repeating_num_check(stack, num, ft_strlen(str_nums[j]), str_nums);
 			stack_push(stack, new_stack((int)(num)));
 		}
-		free_all(str_num);
+		free_all(str_nums);
 	}
 }
 
