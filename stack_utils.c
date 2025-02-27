@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:27 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/02/25 19:05:29 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/02/28 01:02:50 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,17 @@ void	free_stack(t_stack *stack)
 			stack = temp;
 		}
 	}
+}
+
+int	stack_size(t_stack *stack)
+{
+	int	count;
+
+	count = 0;
+	while (stack != NULL)
+	{
+		stack = stack->next;
+		count++;
+	}
+	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/02/25 19:42:32 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/02/28 01:39:01 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,13 @@ static void	argv_check(t_stack **stack, int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	t_stack	*temp;
+	// t_stack	*b;
 
+	t_stack	*temp;
 	a = NULL;
+	// b = NULL;
 	argv_check(&a, argc, argv);
+	swap_a(&a);
 	temp = a;
 	while (a != NULL)
 	{
