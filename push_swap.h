@@ -24,20 +24,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_stack;
 
-typedef	struct array_list
-{
-	int	*a;
-	int	*b;
-	int	a_length;
-	int	b_length;
-}	t_array;
-
-typedef struct s_lists
-{
-	t_stack	*a;
-	t_stack	*b;
-}	t_stacks;
-
 void	error(char *message, t_stack **stack, char **argv);
 t_stack	*new_stack(int num);
 t_stack	*get_last(t_stack *stack);
