@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/02/28 15:44:50 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/01 01:09:08 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,13 @@ int	main(int argc, char **argv)
 	argv_check(&a, argc, argv);
 	push_stack(&a, &b, "pb\n");
 	push_stack(&a, &b, "pb\n");
-	
+	push_stack(&a, &b, "pb\n");
+	push_stack(&a, &b, "pb\n");
+
+	rotate_stack(&b, "rb\n");
+	rotate_stack(&b, "rb\n");
+	rotate_stack(&b, "rb\n");
+
 	printf("\nStack a : ");
 	print_stack(&a);
 	printf("\nStack b : ");
