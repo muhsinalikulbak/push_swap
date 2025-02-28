@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:27 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/02/28 01:02:50 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/02/28 14:58:50 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_stack	*new_stack(int num)
 	return (stack);
 }
 
-void	stack_push(t_stack **head, t_stack *stack)
+void	add_last(t_stack **head, t_stack *stack)
 {
 	t_stack	*last;
 
@@ -46,14 +46,11 @@ void	free_stack(t_stack *stack)
 {
 	t_stack	*temp;
 
-	if (stack)
+	while (stack != NULL)
 	{
-		while (stack != NULL)
-		{
-			temp = stack->next;
-			free(stack);
-			stack = temp;
-		}
+		temp = stack->next;
+		free(stack);
+		stack = temp;
 	}
 }
 
@@ -68,4 +65,21 @@ int	stack_size(t_stack *stack)
 		count++;
 	}
 	return (count);
+}
+
+void	delete_last(t_stack **stack)
+{
+	t_stack *temp;
+
+	if (stack_size(*stack) == 0)
+		return ;
+	if (stack_size(*stack) == 1)
+		*stack = NULL;
+	else
+	{
+		temp = *stack;
+		while (temp->next->next != NULL)
+			temp = temp->next;
+		temp->next = NULL;
+	}
 }

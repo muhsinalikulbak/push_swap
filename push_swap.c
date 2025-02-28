@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/02/28 01:39:01 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/02/28 15:44:50 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,27 +78,43 @@ static void	argv_check(t_stack **stack, int argc, char **argv)
 				error("Error\n", stack, str_nums);
 			num = ft_atol(str_nums[j]);
 			repeating_num_check(stack, num, ft_strlen(str_nums[j]), str_nums);
-			stack_push(stack, new_stack((int)(num)));
+			add_last(stack, new_stack((int)(num)));
 		}
 		free_all(str_nums);
+	}
+}
+
+void	print_stack(t_stack **stack)
+{
+	t_stack *temp;
+
+	temp = *stack;
+	while (temp != NULL)
+	{
+		printf("%d ",temp->content);
+		temp = temp->next;
 	}
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	// t_stack	*b;
+	t_stack	*b;
 
-	t_stack	*temp;
+
 	a = NULL;
-	// b = NULL;
+	b = NULL;
 	argv_check(&a, argc, argv);
-	swap_a(&a);
-	temp = a;
-	while (a != NULL)
-	{
-		printf("%d\n", a->content);
-		a = a->next;
-	}
-	free_stack(temp);
+	push_stack(&a, &b, "pb\n");
+	push_stack(&a, &b, "pb\n");
+	
+	printf("\nStack a : ");
+	print_stack(&a);
+	printf("\nStack b : ");
+	print_stack(&b);
+	printf("\n");
+
+	free_stack(a);
+	free_stack(b);
+	return (0);
 }
