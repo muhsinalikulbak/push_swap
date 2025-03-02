@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:24 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/01 17:39:33 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/02 16:45:01 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_list
 t_stack	*new_stack(int num);
 t_stack	*get_last(t_stack *stack);
 int		stack_size(t_stack *stack);
-void	add_last(t_stack **head, t_stack *stack);
+void	add_last(t_stack **head, t_stack *node);
 void	free_stack(t_stack *stack);
 void	delete_last(t_stack **stack);
 void	swap_stack(t_stack **stack, char *stack_name);

@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:27 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/01 17:40:32 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/02 16:46:00 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ t_stack	*new_stack(int num)
 	return (stack);
 }
 
-void	add_last(t_stack **head, t_stack *stack)
+void	add_last(t_stack **head, t_stack *node)
 {
 	t_stack	*last;
 
 	last = get_last(*head);
 	if (last == NULL)
-		*head = stack;
+		*head = node;
 	else
-		last->next = stack;
+		last->next = node;
 }
 
 void	free_stack(t_stack *stack)
