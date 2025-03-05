@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:24 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/02 16:45:01 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/05 17:14:06 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@
 typedef struct s_list
 {
 	int				content;
+	int				index;
 	struct s_list	*next;
 }	t_stack;
 
 t_stack	*new_stack(int num);
 t_stack	*get_last(t_stack *stack);
+void	set_index(t_stack **a);
 int		stack_size(t_stack *stack);
 void	add_last(t_stack **head, t_stack *node);
 void	free_stack(t_stack *stack);
