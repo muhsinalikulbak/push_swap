@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 14:33:57 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/06 00:46:27 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/06 01:07:22 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,33 +61,31 @@ static int	get_msb(t_stack **a)
 	}
 	return (bit_count);
 }
-static void	push_a(t_stack **a, t_stack **b)
-{
-	while (*b != NULL)
-		push_stack(b, a, "pa\n");
-}
 
 void	radix(t_stack **a, t_stack **b)
 {
-	int		i;
-	int		j;
-	int		msb_size;
-	t_stack *temp;
+	int i;
+	int size;
+	int j;
+	int msb;
 
-	msb_size = get_msb(a);
-	i = -1;
-	while (++i < msb_size)
+	msb = get_msb(a);
+	i = 0;
+	size = stack_size(*a);
+	
+	while (i < msb)
 	{
-		temp = *a;
-		j = -1;
-		while (++j < stack_size(*a))
+		j = 0;
+		while (j < size)
 		{
-			if (temp != NULL && ((temp->index >> i ) & 1) == 0)
+			if ((((*a)->index >> i) & 1) == 0)
 				push_stack(a, b, "pb\n");
-			else if (temp != NULL)
+			else
 				rotate_stack(a, "ra\n");
-			temp = *a;
+			j++;
 		}
-		push_a(a, b);
+		while (*b)
+			push_stack(b, a, "pa\n");
+		i++;
 	}
 }
