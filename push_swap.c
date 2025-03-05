@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/02 16:44:59 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/05 21:12:29 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,18 +105,14 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	argv_check(&a, argc, argv);
-	push_stack(&a, &b, "pb\n");
-	push_stack(&a, &b, "pb\n");
-
-
-
-	printf("\nStack a : ");
-	print_stack(&a);
-	printf("\nStack b : ");
-	print_stack(&b);
-	printf("\n");
-
+	set_index(&a);
+	b = a;
+	while (b != NULL)
+	{
+		printf("sayı : %d index : %d\n",b->content,b->index);
+		b = b->next;
+	}
+	
 	free_stack(a);
-	free_stack(b);
 	return (0);
 }

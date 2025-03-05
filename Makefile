@@ -6,7 +6,7 @@
 #    By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 21:21:11 by mkulbak           #+#    #+#              #
-#    Updated: 2025/03/01 21:21:22 by mkulbak          ###   ########.fr        #
+#    Updated: 2025/03/05 21:10:12 by mkulbak          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 CFLAGS = gcc -Wall -Wextra -Werror
 
-SOURCES = push_swap.c push_swap_utils.c stack_functions.c stack_utils.c
+SOURCES = push_swap.c push_swap_utils.c stack_functions.c stack_utils.c binary_radix_sort.c
 
 LIBFT = libft/libft.a
 
