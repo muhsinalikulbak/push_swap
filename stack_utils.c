@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:27 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/02 16:46:00 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/05 21:59:38 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_stack	*new_stack(int num)
 
 	stack = malloc(sizeof(t_stack));
 	stack->content = num;
+	stack->index = DEFAULT;
 	stack->next = NULL;
 	return (stack);
 }

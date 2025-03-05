@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/05 21:12:29 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/06 00:36:38 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	repeating_num_check(t_stack **stack, long num, int num_len, char **s
 {
 	t_stack *temp;
 
-	if (num_len > 10 || num > INT_MAX || num < INT_MIN)
+	if (num_len > 11 || num > INT_MAX || num < INT_MIN)
 		error("Error\n", stack, str_nums);
 	temp = *stack;
 	while (temp != NULL)
@@ -100,19 +100,22 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
-
+	t_stack *temp;
 
 	a = NULL;
 	b = NULL;
 	argv_check(&a, argc, argv);
 	set_index(&a);
-	b = a;
-	while (b != NULL)
-	{
-		printf("sayı : %d index : %d\n",b->content,b->index);
-		b = b->next;
-	}
+	radix(&a, &b);
+	temp = a;
 	
+	while (temp != NULL)
+	{
+		printf("sayı : %d\n",temp->content);
+		temp = temp->next;
+	}
+
 	free_stack(a);
+	free_stack(b);
 	return (0);
 }
