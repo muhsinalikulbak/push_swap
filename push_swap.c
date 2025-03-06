@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/06 00:36:38 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/06 14:43:58 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,10 @@ static int	digit_check(char *str)
 	return (1);
 }
 
-static void	repeating_num_check(t_stack **stack, long num, int num_len, char **str_nums)
+static void	repeating_num_check(t_stack **stack, long num, int num_len,
+	char **str_nums)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (num_len > 11 || num > INT_MAX || num < INT_MIN)
 		error("Error\n", stack, str_nums);
@@ -84,37 +85,16 @@ static void	argv_check(t_stack **stack, int argc, char **argv)
 	}
 }
 
-void	print_stack(t_stack **stack)
-{
-	t_stack *temp;
-
-	temp = *stack;
-	while (temp != NULL)
-	{
-		printf("%d ",temp->content);
-		temp = temp->next;
-	}
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
-	t_stack *temp;
 
 	a = NULL;
 	b = NULL;
 	argv_check(&a, argc, argv);
 	set_index(&a);
 	radix(&a, &b);
-	temp = a;
-	
-	while (temp != NULL)
-	{
-		printf("sayı : %d\n",temp->content);
-		temp = temp->next;
-	}
-
 	free_stack(a);
 	free_stack(b);
 	return (0);

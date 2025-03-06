@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 00:57:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/02 16:45:04 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/06 14:42:28 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	swap_stack(t_stack **stack, char *stack_name)
 {
-	t_stack *temp1;
-	t_stack *temp2;
-	t_stack *temp3;
+	t_stack	*temp1;
+	t_stack	*temp2;
+	t_stack	*temp3;
 
 	if (stack_size(*stack) < 2)
 		return ;
@@ -41,7 +41,7 @@ void	swap_stack(t_stack **stack, char *stack_name)
 
 void	push_stack(t_stack **stack1, t_stack **stack2, char *push_name)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (!*stack1)
 		return ;
@@ -54,7 +54,7 @@ void	push_stack(t_stack **stack1, t_stack **stack2, char *push_name)
 
 void	rotate_stack(t_stack **stack, char *rotate_name)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (*stack == NULL || stack_size(*stack) == 1)
 		return ;

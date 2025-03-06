@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 14:33:57 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/06 01:07:22 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/06 14:40:54 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ void	set_index(t_stack **a)
 	}
 }
 
+int	max(int num1, int num2)
+{
+	if (num1 > num2)
+		return (num1);
+	else if (num2 > num1)
+		return (num2);
+}
+
 static int	get_msb(t_stack **a)
 {
 	int		max;
@@ -64,15 +72,14 @@ static int	get_msb(t_stack **a)
 
 void	radix(t_stack **a, t_stack **b)
 {
-	int i;
-	int size;
-	int j;
-	int msb;
+	int	i;
+	int	size;
+	int	j;
+	int	msb;
 
 	msb = get_msb(a);
 	i = 0;
 	size = stack_size(*a);
-	
 	while (i < msb)
 	{
 		j = 0;
