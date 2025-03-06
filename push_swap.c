@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/06 23:55:25 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/07 00:55:59 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ int	main(int argc, char **argv)
 	set_index(&a);
 	if (is_sorted(&a) == 1)
 	{
+		if (stack_size(a) < 6)
+		
 		radix(&a, &b);
 	}
 	free_stack(a);
