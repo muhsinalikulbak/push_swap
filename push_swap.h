@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:24 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/06 14:49:27 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/06 23:53:25 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ typedef struct s_list
 
 t_stack	*get_last(t_stack *stack);
 t_stack	*new_stack(int num);
-int		max_num(int num1, int num2);
+int	is_sorted(t_stack **a);
 void	set_index(t_stack **a);
+int		max_num(int num1, int num2);
 int		stack_size(t_stack *stack);
 void	free_stack(t_stack *stack);
 void	delete_last(t_stack **stack);

@@ -1,5 +1,6 @@
 .vscode
 a.out
+checker_linux
 # Prerequisites
 *.d
 
