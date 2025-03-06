@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 14:33:57 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/06 14:40:54 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/06 14:50:34 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,13 @@ void	set_index(t_stack **a)
 	}
 }
 
-int	max(int num1, int num2)
+int	max_num(int num1, int num2)
 {
 	if (num1 > num2)
 		return (num1);
 	else if (num2 > num1)
 		return (num2);
+	return (0);
 }
 
 static int	get_msb(t_stack **a)
@@ -59,7 +60,7 @@ static int	get_msb(t_stack **a)
 	bit_count = 0;
 	while (temp != NULL)
 	{
-		max = MAX(max, temp->index);
+		max = max_num(max, temp->index);
 		temp = temp->next;
 	}
 	while (max > 0)
