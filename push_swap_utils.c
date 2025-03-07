@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:20 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/07 05:59:46 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/07 13:45:06 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,4 @@ void	error(char *message, t_stack **stack, char **argv)
 		free_stack(*stack);
 	write(2, message, ft_strlen(message));
 	exit(EXIT_FAILURE);
-}
-
-int	is_sorted(t_stack **a)
-{
-	t_stack	*temp;
-	int	i;
-
-	i = 0;
-	temp = *a;
-	while (temp != NULL)
-	{
-		if (temp->index != i)
-			return (1);
-		temp = temp->next;
-		i++;
-	}
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 00:57:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/06 14:42:28 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/07 13:48:15 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,14 @@ void	swap_stack(t_stack **stack, char *stack_name)
 {
 	t_stack	*temp1;
 	t_stack	*temp2;
-	t_stack	*temp3;
 
 	if (stack_size(*stack) < 2)
 		return ;
-	if (stack_size(*stack) == 2)
-	{
-		temp1 = (*stack)->next;
-		temp1->next = *stack;
-		temp1->next->next = NULL;
-		*stack = temp1;
-		return ;
-	}
-	temp1 = *stack;
-	while (temp1->next->next->next != NULL)
-		temp1 = temp1->next;
-	temp2 = temp1->next;
-	temp3 = temp2->next;
-	temp1->next = temp3;
-	temp3->next = temp2;
-	temp2->next = NULL;
+	temp1 = (*stack)->next->next;
+	temp2 = (*stack)->next;
+	temp2->next = *stack;
+	temp2->next->next = temp1;
+	*stack = temp2;
 	write(1, stack_name, 3);
 }
 
