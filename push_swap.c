@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/07 00:55:59 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/07 07:48:19 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,9 @@ int	main(int argc, char **argv)
 	if (is_sorted(&a) == 1)
 	{
 		if (stack_size(a) < 6)
-		
-		radix(&a, &b);
+			sort_small(&a, &b, stack_size(a));
+		else
+			radix(&a, &b);
 	}
 	free_stack(a);
 	free_stack(b);

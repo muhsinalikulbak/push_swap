@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:24 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/06 23:53:25 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/07 07:48:04 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_list
 
 t_stack	*get_last(t_stack *stack);
 t_stack	*new_stack(int num);
-int	is_sorted(t_stack **a);
+int		is_sorted(t_stack **a);
 void	set_index(t_stack **a);
 int		max_num(int num1, int num2);
 int		stack_size(t_stack *stack);
@@ -40,6 +40,7 @@ void	rotate_all(t_stack **a, t_stack **b);
 void	add_last(t_stack **head, t_stack *node);
 void	reverse_rotate_all(t_stack **a, t_stack **b);
 void	swap_stack(t_stack **stack, char *stack_name);
+void	sort_small(t_stack **a, t_stack **b, int size);
 void	rotate_stack(t_stack **stack, char *rotate_name);
 void	error(char *message, t_stack **stack, char **argv);
 void	reverse_rotate(t_stack **stack, char *rev_rotate_name);
