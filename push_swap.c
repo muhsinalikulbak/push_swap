@@ -6,7 +6,7 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:11 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/07 13:39:56 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/08 12:04:42 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ static int	digit_check(char *str)
 		else if (!ft_isdigit(str[i]))
 			return (1);
 	}
-	if (plus_count == (int)ft_strlen(str) || minus_count == (int)ft_strlen(str))
-		return (1);
 	if (plus_count == 0 && minus_count == 0)
 		return (0);
 	if (plus_count == 1 && minus_count == 0 && str[0] == '+')

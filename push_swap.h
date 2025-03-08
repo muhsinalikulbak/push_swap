@@ -6,13 +6,13 @@
 /*   By: mkulbak <mkulbak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:43:24 by mkulbak           #+#    #+#             */
-/*   Updated: 2025/03/07 07:48:04 by mkulbak          ###   ########.fr       */
+/*   Updated: 2025/03/08 12:04:22 by mkulbak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# define DEFAULT 4294967295
+# define DEFAULT -1
 # include "libft/libft.h"
 # include "stdlib.h"
 # include "unistd.h"
